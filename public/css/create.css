@@ -1,0 +1,14 @@
+
+.btn btn-info{
+    display: inline;
+}
+.textarea{
+    font-size: 22px;
+	font-family: "Marker Felt", "Segoe Print", Geneva, Verdana, sans-serif;
+    background: url("noteline.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+.input{
+    font-size: 22px;
+	font-family: "Marker Felt", "Segoe Print", Geneva, Verdana, sans-serif;
+}
