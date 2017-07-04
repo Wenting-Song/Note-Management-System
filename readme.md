@@ -1,3 +1,4 @@
+laravel 5.4 is used for this project
 configuration for env. :
 
 DB_CONNECTION=mysql
