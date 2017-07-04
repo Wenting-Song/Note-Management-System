@@ -1,9 +1,4 @@
-@extends('layouts.master');
-
-
-
-
-
+@extends('layouts.master')
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,6 +23,7 @@
     <section class="jumbotron text-center">
       <div class="container">
           <h1><a class="nav-link active" href="/notes/show">My Notes</a></h1>
+          <a href="/notes/create"><img src="notes.png"  alt="note" style="width:304px;height:228px;"></a>
         
       </div>
     </section>
@@ -51,6 +47,6 @@
 <script src="/js/file.js">
 </script>
 </html>
-
  
+
 
