@@ -75,7 +75,7 @@ class NotenoteController extends Controller
         $post = Notenote::find($id);
         $post ->delete();
          
-        return view('Notenote.destroy',compact('post'));
+        return back();
     }
     }
    

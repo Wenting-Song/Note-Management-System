@@ -3,10 +3,9 @@
 @section('content')
 <div class="col-sm-8 blog-main">
      <h1>Create a Note</h1>
-<form method="POST" action="/notes/@yield('editId')">
+<form method="POST" action="/users">
     {{ csrf_field() }}
-    @section('editMethod')
-    @show
+   
     
   <div class="form-group">
     <label for="title">Title</label>

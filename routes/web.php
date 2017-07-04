@@ -29,6 +29,7 @@ Route::get('/users/{posts} ','NotenoteController@showeach');
 Route::get('/notes/create','NotenoteController@create');
 Route::get('/{post}/edit','NotenoteController@edit');
 Route::put('notes/{post}','NotenoteController@update');
+Route::get('destroy/{post}','NotenoteController@destroy');
 Route::post('/users','NotenoteController@store');
 Route::get('/home','HomeController@index');
 Route::get('/register','RegistrationController@create');

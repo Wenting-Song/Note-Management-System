@@ -41,8 +41,13 @@
         
         Created by {{ $post->user->name}} on
         {{ $post->created_at->toDayDateTimeString()}}<a href="#"></a> 
-        <a href="/{{$post->id}}/edit">[ edit</a> / delete ]
+        <a href="/{{$post->id}}/edit">[ edit</a> / <a href="{{url('destroy',
+            [$post->id])}}">delete</a> ]
+        
+        
     </p>
+    
+    
     <div class="list-group-item">
     {{ $post->body}}
    </div>
