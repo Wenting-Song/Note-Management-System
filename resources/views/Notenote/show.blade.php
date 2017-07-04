@@ -9,7 +9,7 @@
          
          
          
-         <a role="button" class="btn btn-primary" href="{{action('UseruserController@create')}}">+New Note</a>
+         <a role="button" class="btn btn-primary" href="{{action('NotenoteController@create')}}">+New Note</a>
         
         </div>
               
@@ -24,11 +24,11 @@
 </div>
     
 
- 
+   
  <div class="col-sm-8 blog-main">
    @foreach ($posts as $post)
     
-   
+  
     <div class="blog-post">
      
 <div class="blog-post">
@@ -40,7 +40,8 @@
     <p class ="blog-post-meta">
         
         Created by {{ $post->user->name}} on
-        {{ $post->created_at->toDayDateTimeString()}}<a href="#"></a> [ edit / delete ]
+        {{ $post->created_at->toDayDateTimeString()}}<a href="#"></a> 
+        <a href="/{{$post->id}}/edit">[ edit</a> / delete ]
     </p>
     <div class="list-group-item">
     {{ $post->body}}

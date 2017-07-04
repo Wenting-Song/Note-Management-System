@@ -25,10 +25,10 @@ class UseruserController extends Controller
         return view('Useruser.create');
         
     }
-   public function auth(){
+  /* public function auth(){
         return view('Useruser.welcome');
         
     }
-
+*/
  
 }

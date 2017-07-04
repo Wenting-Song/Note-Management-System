@@ -20,12 +20,15 @@
 {
 	return 'You have arrived!!';
 });*/
+//Route::get('/auth','UseruserController@auth');
 Route::get('/auth','UseruserController@auth');
 Route::get('/','UseruserController@home')->name('home');
 Route::get('index','UseruserController@index'); 
 Route::get('/notes/show','NotenoteController@show');
 Route::get('/users/{posts} ','NotenoteController@showeach');
-Route::get('/notes/create','UseruserController@create');
+Route::get('/notes/create','NotenoteController@create');
+Route::get('/{post}/edit','NotenoteController@edit');
+Route::put('notes/{post}','NotenoteController@update');
 Route::post('/users','NotenoteController@store');
 Route::get('/home','HomeController@index');
 Route::get('/register','RegistrationController@create');
@@ -34,7 +37,6 @@ Route::get('/login','SessionsController@create');
 Route::post('/login','SessionsController@postLogin');
 Route::get('/logout','SessionsController@destroy');
 Route::get('/welcome','UseruserController@welcome');
-
 
 //Route::get('/home', 'HomeController@index')->name('home');
 

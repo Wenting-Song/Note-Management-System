@@ -14,17 +14,21 @@ class NotenoteController extends Controller
          $this->middleware('auth')->except(['index','show']);
          
      }
+     public function create(){
+        return view('Notenote.create');
+        
+    }
     
     
     
      public function store(){
-    
-        $this->validate(request(),[
-            'title' =>'required',
-            'body' =>'required'
-        
-            
-        ]);
+
+            $this->validate(request(),[
+                'title' =>'required',
+                'body' =>'required'
+
+
+            ]);
          
 //         auth()->user()->publish(
 //             new Notenote(request(['title','body']))
@@ -38,25 +42,41 @@ class NotenoteController extends Controller
              
          
              //And then redirect to the home page
-          return redirect("/");
+          return redirect("notes/show");
     }
   
        public function show(){
-//      $posts = DB::table('notenotes')
-//    ->where('user_id', Auth::user()->id)
-//    ->get();
-       //$posts = Notenote::where("id", "=", '1')->get();
-     //$posts = Notenote::all();
-       //$posts= User::with('notes')->find($id)->notes;   
+ 
         $posts= User::find(Auth::id())->posts;
-        //$posts = Notenote::find($id);
-
-       
-       return view('Notenote.show',compact('posts'));
+        return view('Notenote.show',compact('posts'));
     }
      public function showeach($id){
        $post = Notenote::find($id);
        return view('Notenote.showeach',compact('post'));
     }
+    
+       public function edit($id){
+        $post = Notenote::find($id);
+        return view('Notenote.edit',compact('post'));
+    }
+    
+     public function update(Request $request,$id){
+        $post = Notenote::find($id);
+         $this->validate($request,[
+             'body'=>'required',
+             'title'=>'required',
+             ]);
+             $post->body=$request->body;
+             $post->title=$request->title;
+        $post->save();
+        return redirect("/notes/show");
+     }
+     public function destroy($id){
+        $post = Notenote::find($id);
+        $post ->delete();
+         
+        return view('Notenote.destroy',compact('post'));
+    }
+    }
    
-}
+
