@@ -7,6 +7,6 @@ DB_DATABASE=noteProject
 DB_USERNAME=root
 DB_PASSWORD=
 
-Two accounts has been set up: 
+Two accounts have been set up: 
 email: r@gmail.com; password:rrrrrr;
 email: test@test.com; password:123456;
